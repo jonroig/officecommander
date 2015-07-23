@@ -75,7 +75,7 @@ var authorityUrl = sampleParameters.authorityHostUrl + '/' + sampleParameters.te
 var redirectUri = 'http://officecommander.cloudapp.net/getAToken';
 var resource = 'https://graph.microsoft.com/';
 
-var templateAuthzUrl = 'https://login.windows.net/common/' + sampleParameters.tenant + '/oauth2/authorize?response_type=code&client_id=<client_id>&redirect_uri=<redirect_uri>&state=<state>&resource=<resource>&prompt=consent';
+var templateAuthzUrl = 'https://login.microsoftonline.com/common/oauth2/authorize?response_type=code&client_id=<client_id>&redirect_uri=<redirect_uri>&state=<state>&resource=<resource>&prompt=consent';
 console.log('templateAuthzUrl',templateAuthzUrl);
 
 app.get('/', function(req, res) {
