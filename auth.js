@@ -14,7 +14,7 @@ function AzureOAuthStrategy() {
       callbackURL: 'http://officecommander.cloudapp.net/auth/azureoauth/callback/',
       resource: "https://graph.microsoft.com/",
       tenant: "7e6178cf-6e84-42ca-9206-5779585ec237",
-      prompt: 'consent',
+      prompt: 'login',
       state: true
     },
     function (accessToken, refreshtoken, params, profile, done) {
@@ -24,12 +24,12 @@ function AzureOAuthStrategy() {
     }));
 
     this.passport.serializeUser(function(user, done) {
-        //console.log("profile : ", user);
+        console.log("serializeUser profile : ", user);
         done(null, user);
     });
 
     this.passport.deserializeUser(function(user, done) {
-        //console.log("profile : ", user);
+        console.log("deserializeUser profile : ", user);
         done(null, user);
     });
 }
