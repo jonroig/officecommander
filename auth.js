@@ -15,7 +15,6 @@ function AzureOAuthStrategy() {
       resource: "https://graph.microsoft.com/",
       tenant: "7e6178cf-6e84-42ca-9206-5779585ec237",
       prompt: 'consent',
-      redirectURI
       state: true
     },
     function (accessToken, refreshtoken, params, profile, done) {
