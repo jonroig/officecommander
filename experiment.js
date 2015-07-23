@@ -67,18 +67,16 @@ if (!parametersFile) {
     tenant : 'officecommander.onmicrosoft.com',
     authorityHostUrl : 'https://login.windows.net',
     clientId : '7d2eeb09-ffdf-4862-84c3-0c0db0d8a3aa',
-    clientSecret: "fWBhDwN8ZX1PZbfEzuVGCtKnSx/uSYJwikOTrvOFCJ4=",
-    resource : "https://graph.microsoft.com/",
-    'response_type' : 'code'
+    clientSecret: "fWBhDwN8ZX1PZbfEzuVGCtKnSx/uSYJwikOTrvOFCJ4="
   };
 }
 
 var authorityUrl = sampleParameters.authorityHostUrl + '/' + sampleParameters.tenant;
 var redirectUri = 'http://officecommander.cloudapp.net/getAToken';
-var resource = '00000002-0000-0000-c000-000000000000';
+var resource = 'https://graph.microsoft.com/';
 
-var templateAuthzUrl = 'https://login.windows.net/' + sampleParameters.tenant + '/oauth2/authorize?response_type=code&client_id=<client_id>&redirect_uri=<redirect_uri>&state=<state>&resource=<resource>';
-
+var templateAuthzUrl = 'https://login.windows.net/' + sampleParameters.tenant + '/oauth2/authorize?response_type=code&client_id=<client_id>&redirect_uri=<redirect_uri>&state=<state>&resource=<resource>&prompt=consent';
+console.log('templateAuthzUrl',templateAuthzUrl);
 
 app.get('/', function(req, res) {
   res.redirect('/login');
@@ -104,6 +102,7 @@ function createAuthorizationUrl(state) {
   authorizationUrl = authorizationUrl.replace('<redirect_uri>',redirectUri);
   authorizationUrl = authorizationUrl.replace('<state>', state);
   authorizationUrl = authorizationUrl.replace('<resource>', resource);
+  console.log('authorizationUrl',authorizationUrl);
   return authorizationUrl;
 }
 
@@ -153,5 +152,5 @@ app.get('/getAToken', function(req, res) {
   });
 });
 
-app.listen(3000);
-console.log('listening on 3000');
+app.listen(80);
+console.log('listening on 80');
