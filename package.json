@@ -1,0 +1,26 @@
+{
+  "name": "officecomander",
+  "version": "1.0.0",
+  "description": "OfficeCommander!",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jonroig/officecomander.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jonroig/officecomander/issues"
+  },
+  "homepage": "https://github.com/jonroig/officecomander",
+  "dependencies": {
+    "express-session": "^1.11.3",
+    "jwt-simple": "^0.3.0",
+    "passport": "^0.2.2",
+    "passport-azure-oauth2": "^0.1.0"
+  }
+}
