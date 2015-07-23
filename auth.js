@@ -8,7 +8,7 @@ var jwt                   = require("jwt-simple");
 function AzureOAuthStrategy() {
     this.passport = require("passport");
 
-    this.passport.use("provider", new AzureOAuth2Strategy({
+    this.passport.use("ocommand", new AzureOAuth2Strategy({
       clientID: '873840b5-ab0a-468f-9fc4-74e4677997ad',
       clientSecret: 'hhhPRx0RuAke+QBVD7R+QcIoJuePc27mZhKdTQKo2FA=',
       callbackURL: 'http://officecommander.cloudapp.net/auth/azureoauth/callback/',

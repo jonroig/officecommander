@@ -12,10 +12,10 @@ app.use( session({
 app.use(auth.passport.initialize());
 app.use(auth.passport.session());
 
-app.get("/login", auth.passport.authenticate("provider", { successRedirect: "/" }));
+app.get("/login", auth.passport.authenticate("ocommand", { successRedirect: "/" }));
 
 app.get("/auth/azureOAuth/callback",
-    auth.passport.authenticate("provider", {
+    auth.passport.authenticate("ocommand", {
     successRedirect: "/",
     failureRedirect: "/login" }), function (req, res) { res.redirect("/"); });
 
