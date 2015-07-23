@@ -3,6 +3,11 @@ var express = require("express");
 var app     = express();
 var session = require("express-session");
 
+app.use( session({
+    secret: 'somesecret',
+    resave: true,
+    saveUninitialized : true
+}));
 
 app.use(auth.passport.initialize());
 app.use(auth.passport.session());
@@ -16,11 +21,7 @@ app.get("/auth/azureoauth/callback",
 
 
 
-app.use( session({
-    secret: 'somesecret',
-    resave: true,
-    saveUninitialized : true
-}));
+
 
 app.set('port', process.env.PORT || 80);
 var server = app.listen(app.get('port'), function() {
