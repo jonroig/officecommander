@@ -1,6 +1,8 @@
 var auth    = require("./auth");
 var express = require("express");
 var app     = express();
+var session = require("express-session");
+
 
 app.use(auth.passport.initialize());
 app.use(auth.passport.session());
@@ -13,7 +15,6 @@ app.get("/auth/azureoauth/callback",
     failureRedirect: "/login" }), function (req, res) { res.redirect("/"); });
 
 
-var session = require("express-session");
 
 app.use( session({
     secret: 'somesecret',
