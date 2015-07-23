@@ -11,10 +11,11 @@ function AzureOAuthStrategy() {
     this.passport.use("provider", new AzureOAuth2Strategy({
       clientID: '7d2eeb09-ffdf-4862-84c3-0c0db0d8a3aa',
       clientSecret: 'fWBhDwN8ZX1PZbfEzuVGCtKnSx/uSYJwikOTrvOFCJ4=',
-      /**callbackURL: '',**/
+      callbackURL: 'http://officecommander.cloudapp.net/auth/azureoauth/callback/',
       resource: "https://graph.microsoft.com/",
       tenant: "7e6178cf-6e84-42ca-9206-5779585ec237",
       prompt: 'consent',
+      redirectURI
       state: true
     },
     function (accessToken, refreshtoken, params, profile, done) {
