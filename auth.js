@@ -19,6 +19,7 @@ function AzureOAuthStrategy() {
     },
     function (accessToken, refreshtoken, params, profile, done) {
       var user = jwt.decode(params.id_token, "", true);
+      console.log('user',user);
       done(null, user);
     }));
 
