@@ -16,20 +16,16 @@ function AzureOAuthStrategy() {
       prompt: 'consent'
     },
     function (accessToken, refreshtoken, params, profile, done) {
-      console.log('accessToken',accessToken);
       var user = jwt.decode(params.id_token, "", true);
       user.accessToken = accessToken;
-      console.log('user',user);
       done(null, user);
     }));
 
     this.passport.serializeUser(function(user, done) {
-        console.log("serializeUserprofile : ", user);
         done(null, user);
     });
 
     this.passport.deserializeUser(function(user, done) {
-        console.log("profile : ", user);
         done(null, user);
     });
 }

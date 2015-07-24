@@ -12,7 +12,11 @@ app.use( session({
 app.use(auth.passport.initialize());
 app.use(auth.passport.session());
 
-app.get("/login", auth.passport.authenticate("provider", { successRedirect: "/" }));
+app.get('/', function (req, res) {
+    res.send('<a href="/login">login</a>');
+});
+
+app.get("/login", auth.passport.authenticate("provider", { successRedirect: "/mail" }));
 
 app.get("/auth/azureoauth/callback",
     auth.passport.authenticate("provider", {
@@ -20,10 +24,7 @@ app.get("/auth/azureoauth/callback",
     failureRedirect: "/login" }), function (req, res) { res.redirect("/"); });
 
 app.get('/mail', function (req, res, next) {
-
-
-	console.log('req',req)
-    var opts = {
+	var opts = {
         url: 'https://graph.microsoft.com/beta/me/messages?api-version=1.5',
         headers : { 'authorization' : 'Bearer ' + req.user.accessToken }
     };
