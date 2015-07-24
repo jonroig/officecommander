@@ -28,7 +28,7 @@ app.get('/mail', function (req, res, next) {
         headers : { 'Authorization' : 'Bearer: ' + req.user.accessToken }
     };
     console.log('opts',opts);
-    request.get(
+    require('request').get(
         opts,
         function (error, response, body) {
             if (error) {
