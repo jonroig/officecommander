@@ -13,7 +13,7 @@ app.use(auth.passport.initialize());
 app.use(auth.passport.session());
 
 app.get('/', function (req, res) {
-    res.send('<a href="/login">login</a>');
+    res.send('office 365 mail grabbing example: <a href="/login">login</a>');
 });
 
 app.get("/login", auth.passport.authenticate("provider", { successRedirect: "/mail" }));
