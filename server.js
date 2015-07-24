@@ -16,7 +16,7 @@ app.get("/login", auth.passport.authenticate("provider", { successRedirect: "/" 
 
 app.get("/auth/azureoauth/callback",
     auth.passport.authenticate("provider", {
-    successRedirect: "/",
+    successRedirect: "/mail",
     failureRedirect: "/login" }), function (req, res) { res.redirect("/"); });
 
 app.get('/mail', function (req, res, next) {
@@ -24,7 +24,7 @@ app.get('/mail', function (req, res, next) {
 
 	console.log('req',req)
     var opts = {
-        url: 'https://graph.microsoft.com/beta/me/messages',
+        url: 'https://graph.microsoft.com/beta/me/messages?api-version=1.5',
         headers : { 'Authorization' : 'Bearer: ' + req.user.accessToken }
     };
     console.log('opts',opts);
@@ -36,8 +36,7 @@ app.get('/mail', function (req, res, next) {
             }
             else {
                 console.log('mailbody',body);
-                data = { user: passport.user, msgs: JSON.parse(body)['value'] };
-                res.render('mail', { data: data });
+                res.send(body);
             }
         }
     );
