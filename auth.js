@@ -12,9 +12,8 @@ function AzureOAuthStrategy() {
       clientID: '7d2eeb09-ffdf-4862-84c3-0c0db0d8a3aa',
       clientSecret: 'fWBhDwN8ZX1PZbfEzuVGCtKnSx/uSYJwikOTrvOFCJ4=',
       callbackURL: 'http://officecommander.cloudapp.net/auth/azureoauth/callback/',
-      resource: "https://graph.microsoft.com/"
-      prompt: 'consent',
-      state: true
+      resource: "https://graph.microsoft.com/",
+      prompt: 'consent'
     },
     function (accessToken, refreshtoken, params, profile, done) {
       var user = jwt.decode(params.id_token, "", true);
