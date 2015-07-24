@@ -6,6 +6,8 @@ var jwt                  = require("jwt-simple");
 function AzureOAuthStrategy() {
     this.passport = require("passport");
 
+
+    // SETTINGS! You'll need to edit these.
     this.passport.use("provider", new AzureOAuth2Strategy({
       clientID: '7d2eeb09-ffdf-4862-84c3-0c0db0d8a3aa',
       clientSecret: 'fWBhDwN8ZX1PZbfEzuVGCtKnSx/uSYJwikOTrvOFCJ4=',
@@ -13,6 +15,8 @@ function AzureOAuthStrategy() {
       resource: "https://graph.microsoft.com/",
       prompt: 'consent'
     },
+
+
     function (accessToken, refreshtoken, params, profile, done) {
       var user = jwt.decode(params.id_token, "", true);
       user.accessToken = accessToken;

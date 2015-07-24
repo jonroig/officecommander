@@ -1,5 +1,5 @@
 {
-  "name": "officecomander",
+  "name": "officecommander",
   "version": "1.0.0",
   "description": "OfficeCommander!",
   "main": "server.js",
@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/jonroig/officecomander.git"
+    "url": "https://github.com/jonroig/officecommander.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/jonroig/officecomander/issues"
+    "url": "https://github.com/jonroig/officecommander/issues"
   },
-  "homepage": "https://github.com/jonroig/officecomander",
+  "homepage": "https://github.com/jonroig/officecommander",
   "dependencies": {
     "express": "^4.13.1",
     "express-session": "^1.11.3",

@@ -24,11 +24,13 @@ app.get("/auth/azureoauth/callback",
     failureRedirect: "/login" }), function (req, res) { res.redirect("/"); });
 
 app.get('/mail', function (req, res, next) {
+
+    // this is a rest request to the Graph API
 	var opts = {
         url: 'https://graph.microsoft.com/beta/me/messages?api-version=1.5',
         headers : { 'authorization' : 'Bearer ' + req.user.accessToken }
     };
-    console.log('opts',opts);
+
     require('request').get(
         opts,
         function (error, response, body) {
