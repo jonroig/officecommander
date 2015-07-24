@@ -22,7 +22,7 @@ app.get("/auth/azureoauth/callback",
 app.get('/mail', function (req, res, next) {
 	console.log('session.user')
     var opts = {
-        url: 'https://graph.microsoft.com/beta/me',
+        url: 'https://graph.microsoft.com/beta/me/messages',
         headers : { 'Authorization' : 'Bearer: ' + session.user.accessToken }
     };
     console.log('opts',opts);
