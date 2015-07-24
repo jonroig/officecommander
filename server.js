@@ -19,6 +19,28 @@ app.get("/auth/azureoauth/callback",
     successRedirect: "/",
     failureRedirect: "/login" }), function (req, res) { res.redirect("/"); });
 
+app.get('/mail', function (req, res, next) {
+	console.log('session.user')
+    var opts = {
+        url: 'https://graph.microsoft.com/beta/me',
+        headers : { 'Authorization' : 'Bearer: ' + session.user.accessToken }
+    };
+    console.log('opts',opts);
+    request.get(
+        opts,
+        function (error, response, body) {
+            if (error) {
+                next(error);
+            }
+            else {
+                console.log('mailbody',body);
+                data = { user: passport.user, msgs: JSON.parse(body)['value'] };
+                res.render('mail', { data: data });
+            }
+        }
+    );
+});
+
 
 app.set('port', process.env.PORT || 80);
 var server = app.listen(app.get('port'), function() {
