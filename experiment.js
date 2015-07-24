@@ -142,15 +142,15 @@ app.get('/getAToken', function(req, res) {
       return;
     }
 
-    // Later, if the access token is expired it can be refreshed.
-    authenticationContext.acquireTokenWithRefreshToken(response.refreshToken, sampleParameters.clientId, sampleParameters.clientSecret, resource, function(refreshErr, refreshResponse) {
-      if (refreshErr) {
-        message += 'refreshError: ' + refreshErr.message + '\n';
-      }
-      message += 'refreshResponse: ' + JSON.stringify(refreshResponse);
+    // // Later, if the access token is expired it can be refreshed.
+    // authenticationContext.acquireTokenWithRefreshToken(response.refreshToken, sampleParameters.clientId, sampleParameters.clientSecret, resource, function(refreshErr, refreshResponse) {
+    //   if (refreshErr) {
+    //     message += 'refreshError: ' + refreshErr.message + '\n';
+    //   }
+    //   message += 'refreshResponse: ' + JSON.stringify(refreshResponse);
 
-      res.send(message);
-    });
+    //   res.send(message);
+    // });
   });
 });
 
