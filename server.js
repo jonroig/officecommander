@@ -25,7 +25,7 @@ app.get('/mail', function (req, res, next) {
 	console.log('req',req)
     var opts = {
         url: 'https://graph.microsoft.com/beta/me/messages',
-        headers : { 'Authorization' : 'Bearer: ' + auth.passport.user.accessToken }
+        headers : { 'Authorization' : 'Bearer: ' + req.user.accessToken }
     };
     console.log('opts',opts);
     request.get(
