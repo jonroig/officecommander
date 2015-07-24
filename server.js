@@ -20,10 +20,10 @@ app.get("/auth/azureoauth/callback",
     failureRedirect: "/login" }), function (req, res) { res.redirect("/"); });
 
 app.get('/mail', function (req, res, next) {
-	console.log('req.session')
+	console.log('auth.passport.user',auth.passport.user)
     var opts = {
         url: 'https://graph.microsoft.com/beta/me/messages',
-        headers : { 'Authorization' : 'Bearer: ' + req.session.user.accessToken }
+        headers : { 'Authorization' : 'Bearer: ' + auth.passport.user.accessToken }
     };
     console.log('opts',opts);
     request.get(
