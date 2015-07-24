@@ -20,7 +20,9 @@ app.get("/auth/azureoauth/callback",
     failureRedirect: "/login" }), function (req, res) { res.redirect("/"); });
 
 app.get('/mail', function (req, res, next) {
-	console.log('auth.passport.user',auth.passport.user)
+
+
+	console.log('req',req)
     var opts = {
         url: 'https://graph.microsoft.com/beta/me/messages',
         headers : { 'Authorization' : 'Bearer: ' + auth.passport.user.accessToken }
