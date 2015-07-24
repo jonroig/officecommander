@@ -12,3 +12,10 @@ Sadly, our beautiful dream was not to be realized. We figured it would be super 
 * **Be VERY careful about adding "Windows Azure Active Directory" permissions**. You're not gonna need 'em, not for hitting O365 and getting email / files / contacts / whatever. That's actually one of the places I got tripped up: we use Office 365 at work and our domain is locked down in such a way that it doesn't allow random applications to connect to it. Makes sense, but it wasn't super obvious initially why my OAuth attempts kept failing. As you're adding new permissions, you'll find [this document](https://msdn.microsoft.com/office/office365/HowTo/application-manifest) helpful.
 * **The documentation isn't bad, once you get a feel for it.** Microsoft has pretty good description of the whole OAuth process [here](https://msdn.microsoft.com/en-us/library/azure/Dn645542.aspx). There's also [a pretty good overview of the REST API](https://msdn.microsoft.com/en-us/office/office365/howto/office-365-unified-api-overview) that's worth reading. [These example calls](https://msdn.microsoft.com/en-us/office/office365/howto/examples-of-office-365-unified-api-calls) might be worth a look as well.
 * **You'll need a valid Office 365 account for this to work.** Hopefully that goes without saying?
+
+
+##See OfficeCommander In Action##
+* git clone this repo
+* npm install
+* node server.js
+* go http://127.0.0.1:3000
