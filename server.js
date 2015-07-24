@@ -14,13 +14,10 @@ app.use(auth.passport.session());
 
 app.get("/login", auth.passport.authenticate("provider", { successRedirect: "/" }));
 
-app.get("/auth/azureOAuth/callback",
+app.get("/auth/azureoauth/callback",
     auth.passport.authenticate("provider", {
     successRedirect: "/",
     failureRedirect: "/login" }), function (req, res) { res.redirect("/"); });
-
-
-
 
 
 app.set('port', process.env.PORT || 80);

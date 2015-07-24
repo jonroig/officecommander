@@ -16,6 +16,7 @@ function AzureOAuthStrategy() {
       prompt: 'consent'
     },
     function (accessToken, refreshtoken, params, profile, done) {
+      console.log('accessToken',accessToken);
       var user = jwt.decode(params.id_token, "", true);
       console.log('user',user);
       done(null, user);
