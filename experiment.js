@@ -127,6 +127,8 @@ app.get('/getAToken', function(req, res) {
   if (req.cookies.authstate !== req.query.state) {
     res.send('error: state does not match');
   }
+  console.log('authorityUrl',authorityUrl);
+  console.log('req.query.code=',req.query.code);
   var authenticationContext = new AuthenticationContext(authorityUrl);
   authenticationContext.acquireTokenWithAuthorizationCode(req.query.code, redirectUri, resource, sampleParameters.clientId, sampleParameters.clientSecret, function(err, response) {
     var message = '';
