@@ -37,7 +37,7 @@ app.get('/mail', function (req, res, next) {
             }
             else {
                 console.log('mailbody',body);
-                res.send(body);
+                res.send("<textarea>" + body + "</textarea>");
             }
         }
     );
