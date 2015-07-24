@@ -1,9 +1,7 @@
 "use strict";
 
-/*jshint camelcase: false */
-
 var AzureOAuth2Strategy  = require("passport-azure-oauth2");
-var jwt                   = require("jwt-simple");
+var jwt                  = require("jwt-simple");
 
 function AzureOAuthStrategy() {
     this.passport = require("passport");
@@ -11,7 +9,7 @@ function AzureOAuthStrategy() {
     this.passport.use("provider", new AzureOAuth2Strategy({
       clientID: '7d2eeb09-ffdf-4862-84c3-0c0db0d8a3aa',
       clientSecret: 'fWBhDwN8ZX1PZbfEzuVGCtKnSx/uSYJwikOTrvOFCJ4=',
-      callbackURL: 'http://officecommander.cloudapp.net/auth/azureoauth/callback/',
+      callbackURL: 'http://127.0.0.1:3000/auth/azureoauth/callback/',
       resource: "https://graph.microsoft.com/",
       prompt: 'consent'
     },

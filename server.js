@@ -13,7 +13,7 @@ app.use(auth.passport.initialize());
 app.use(auth.passport.session());
 
 app.get('/', function (req, res) {
-    res.send('office 365 mail grabbing example: <a href="/login">login</a>');
+    res.send('Office 365 REST Mail Example: <a href="/login">login</a>');
 });
 
 app.get("/login", auth.passport.authenticate("provider", { successRedirect: "/mail" }));
@@ -44,7 +44,6 @@ app.get('/mail', function (req, res, next) {
 });
 
 
-app.set('port', process.env.PORT || 80);
-var server = app.listen(app.get('port'), function() {
-    console.log('Express server listening on port ' + server.address().port);
+var server = app.listen(3000, function() {
+    console.log('Express server listening on port 3000');
 });
