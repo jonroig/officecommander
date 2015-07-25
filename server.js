@@ -5,14 +5,19 @@ var session = require("express-session");
 var request = require("request");
 var exphbs  = require('express-handlebars');
 
+
+// we're using express sessions
 app.use( session({
     secret: 'somesecret',
     resave: true,
     saveUninitialized : true
 }));
 
+
+// passport setup
 app.use(auth.passport.initialize());
 app.use(auth.passport.session());
+
 
 // protect our routes by sending unauthenticated users to the homepage
 var isAuthenticated = function (req, res, next) {
@@ -21,6 +26,8 @@ var isAuthenticated = function (req, res, next) {
   res.redirect('/');
 }
 
+
+// setup for the handlebars view engine
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
 
@@ -60,10 +67,7 @@ app.get('/mail', isAuthenticated, function (req, res, next) {
             }
             else {
                 console.log('mailbody',body);
-                //res.send("<textarea>" + body + "</textarea>");
-
                 var parsedBody = JSON.parse(body);
-                console.log('body.value',parsedBody.value);
                 res.render('mail', {emailArray: parsedBody.value});
             }
         }
@@ -71,6 +75,7 @@ app.get('/mail', isAuthenticated, function (req, res, next) {
 });
 
 
+// get the server going!
 var server = app.listen(3000, function() {
     console.log('Express server listening on port 3000');
 });
