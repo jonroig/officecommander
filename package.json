@@ -19,6 +19,7 @@
   "homepage": "https://github.com/jonroig/officecommander",
   "dependencies": {
     "express": "^4.13.1",
+    "express-handlebars": "^2.0.1",
     "express-session": "^1.11.3",
     "jwt-simple": "^0.3.0",
     "passport": "^0.2.2",
