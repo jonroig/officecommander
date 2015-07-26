@@ -9,7 +9,7 @@ This example uses the <a href="https://msdn.microsoft.com/office/office365/HowTo
 
 ... so... uhh... enjoy that. 
 
-In all seriousness, the Graph API is theoretical future of the Office 365 APIs, so it's probably worth exploring them now.
+In all seriousness, the Graph API is theoretical future of the Office 365 APIs, so it's probably worth exploring them now, if you're into that kind of thing.
 
 ###30 Second Demo###
 * git clone this repo
