@@ -2,7 +2,7 @@
 
 ... ok, so maybe that title is a little overblown for what this is -- just a **quick demo that uses Microsoft's new Office 365 REST Graph API, oAuth2, and Node.js to show your last ten Office 365 emails** -- but that's the name it began with and now that's the title it's gonna have. This project began as a 24 hour hackathon project for my employer, GoDaddy, in which we were going to create a little Chrome extension, so when you open a new tab, all your important Office 365 docs and contacts and whatnot are all there right at the ready.
 
-Sadly, our beautiful dream was not to be realized. Not that night anyway. We figured it would be super simple to hook up to the API and just get going and when you look at the code, you're going to be like, "Duh," but there was a surprising amount of pain in getting to this point. 
+Sadly, our beautiful dream was not to be realized. Not that night anyway. We figured it would be super simple to hook up to the API and just get going and when you look at the code, you're going to be like, "Duh," but there was a surprising amount of pain in getting to this point. For the next person with an interest in oAauth / node / office 365 rest calls, hopefully you'll find this useful as a starting point rather than getting stuck in setup hell.
 
 ###30 Second Demo###
 * git clone this repo
@@ -26,3 +26,6 @@ For demonstration purposes, I set up my Microsoft Azure Active Directory with th
 * **The REST API documentation isn't bad, once you get a feel for it.** Microsoft has pretty good description of the whole OAuth process [here](https://msdn.microsoft.com/en-us/library/azure/Dn645542.aspx). There's also [a pretty good overview](https://msdn.microsoft.com/en-us/office/office365/howto/office-365-unified-api-overview) that's worth reading. [These example calls](https://msdn.microsoft.com/en-us/office/office365/howto/examples-of-office-365-unified-api-calls) might be worth a look as well.
 * **You'll need a valid Office 365 account for this to work.** Hopefully that goes without saying?
 
+## License
+
+[MIT](https://github.com/andrewkeig/joi-contrib/blob/master/LICENSE)
