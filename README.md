@@ -5,7 +5,7 @@
 Sadly, our beautiful dream was not to be realized. Not that night anyway. We figured it would be super simple to hook up to the API and just get going and when you look at the code, you're going to be like, "Duh," but there was a surprising amount of pain in getting to this point. For the next person with an interest in oAauth / node / office 365 rest calls, hopefully you'll find this useful as a starting point rather than getting stuck in setup hell.
 
 ###The Microsoft Graph API###
-This example uses the <a href="https://msdn.microsoft.com/office/office365/HowTo/platform-development-preview-features-overview">new Office 365 Graph API</a> to grab email, which [behaves a little differently than the "main" api](https://msdn.microsoft.com/en-us/office/office365/howto/examples-of-office-365-unified-api-calls). That is to say, the endpoint in this example is: https://graph.microsoft.com
+... aka **The Office 365 Unified REST API**. This example uses the <a href="https://msdn.microsoft.com/office/office365/HowTo/platform-development-preview-features-overview">new Office 365 Graph API</a> to grab email, which [behaves a little differently than the "main" api](https://msdn.microsoft.com/en-us/office/office365/howto/examples-of-office-365-unified-api-calls). That is to say, the endpoint in this example is: https://graph.microsoft.com
 
 ... so... uhh... enjoy that. 
 
