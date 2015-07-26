@@ -17,7 +17,7 @@ In all seriousness, the Graph API is theoretical future of the Office 365 APIs, 
 * node server.js
 * go http://127.0.0.1:3000
 
-For demonstration purposes, I set up my Microsoft Azure Active Directory with the proper permissions to show you how this works. You'll go to the web page, log in via your Office 365 account, and see your mail. When you authenticate, you'll note that this app's Active Directory instance has been granted a single permission: read Office 365 email. When you're working on your own project, you'll need to change those key and client settings, and set up your own AD instance.
+For demonstration purposes, I set up my Microsoft Azure Active Directory with the proper permissions to show you how this works. You'll go to the web page, log in via your Office 365 account, and see your mail. When you authenticate, you'll note that this app's Active Directory instance has been granted a single permission: read Office 365 email. When you're working on your own project, you'll need to set up your own AD instance and change those key and client settings.
 
 ###Lessons Learned###
 * **The client must consent**. Any OAuth Client you're going to use HAS to allow for "prompt=consent" if you want to connect to Microsoft's newer API. If you don't properly get consent from the user on login and fully inform them of the privledges you're grabbing, you won't be able to make subsequent successful calls to the Graph REST API. 
