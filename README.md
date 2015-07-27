@@ -2,20 +2,20 @@
 
 ... ok, so maybe that title is a little overblown for what this is -- just a **quick demo that uses Microsoft's new Office 365 REST Graph API, oAuth2, and Node.js to show your last ten Office 365 emails** -- but that's the name it began with and now that's the title it's gonna have. This project began as a 24 hour hackathon project for my employer, GoDaddy, in which we were going to create a little Chrome extension, so when you open a new tab, all your important Office 365 docs and contacts and whatnot are all there right at the ready.
 
-Sadly, our beautiful dream was not to be realized. Not that night anyway. We figured it would be super simple to hook up to the API and just get going and when you look at the code, you're going to be like, "Duh," but there was a surprising amount of pain in getting to this point. For the next person with an interest in oAauth / node / office 365 rest calls, hopefully you'll find this useful as a starting point rather than getting stuck in setup hell.
-
-###The Microsoft Graph API###
-... aka **The Office 365 Unified REST API**. This example uses the <a href="https://msdn.microsoft.com/office/office365/HowTo/platform-development-preview-features-overview">new Office 365 Graph API</a> to grab email, which [behaves a little differently than the "main" api](https://msdn.microsoft.com/en-us/office/office365/howto/examples-of-office-365-unified-api-calls). That is to say, the endpoint in this example is: https://graph.microsoft.com
-
-... so... uhh... enjoy that. 
-
-In all seriousness, the Graph API is theoretical future of the Office 365 APIs, so it's probably worth exploring them now, if you're into that kind of thing.
+Sadly, our beautiful dream was not to be realized. Not that night anyway. We figured it would be super simple to hook up to the API and just get going and when you look at the code, you're going to be like, "Duh." That said, there was a surprising amount of pain in getting to this point, lots of little dumb things to sort out, examples to try, modify and discard, none of which worked quite right for the new Office 365 Graph API. This is my contribution to the pile. For the next person with an interest in OAuth / Node / Office 365 REST calls, hopefully you'll find this useful as a starting point rather than getting stuck in setup hell.
 
 ###30 Second Demo###
 * git clone this repo
 * npm install
 * node server.js
 * go http://127.0.0.1:3000
+
+###The Microsoft Graph API###
+... aka **The Office 365 Unified REST API**. This example uses the <a href="https://msdn.microsoft.com/office/office365/HowTo/platform-development-preview-features-overview">new Office 365 Graph API</a> to grab email, which [behaves a little differently than the "main" api](https://msdn.microsoft.com/en-us/office/office365/howto/examples-of-office-365-unified-api-calls). That is to say, the endpoint in this example is: https://graph.microsoft.com
+
+... so... uhh... enjoy that. 
+
+In all seriousness, the Graph API is theoretical future of the Office 365 APIs, so it's probably worth exploring this now, if you're into that kind of thing. Which I know you are.
 
 For demonstration purposes, I set up my Microsoft Azure Active Directory with the proper permissions to show you how this works. You'll go to the web page, log in via your Office 365 account, and see your mail. When you authenticate, you'll note that this app's Active Directory instance has been granted a single permission: read Office 365 email. When you're working on your own project, you'll need to set up your own AD instance and change those key and client settings.
 
@@ -32,6 +32,10 @@ For demonstration purposes, I set up my Microsoft Azure Active Directory with th
 * **Most of the other tutorials out there are for the old Office 365 / Exchange API**. The new Office 365 REST Graph API behaves somewhat differently. Those other examples are useless. Forget you ever saw them. They will only lead you astray.
 * **The REST API documentation isn't bad, once you get a feel for it.** Microsoft has pretty good description of the whole OAuth process [here](https://msdn.microsoft.com/en-us/library/azure/Dn645542.aspx). There's also [a pretty good overview](https://msdn.microsoft.com/en-us/office/office365/howto/office-365-unified-api-overview) that's worth reading. [These example calls](https://msdn.microsoft.com/en-us/office/office365/howto/examples-of-office-365-unified-api-calls) might be worth a look as well.
 * **You'll need a valid Office 365 account for this to work.** Hopefully that goes without saying?
+
+## Contact
+Jon Roig [@runnr_az](https://twitter.com/runnr_az)
+
 
 ## License
 
